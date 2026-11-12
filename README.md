@@ -89,15 +89,16 @@ Both original (seed 224) and external synthetic workload (seed 230) examples
 are documented. No archived raw output traces need to be downloaded to run a
 case from source.
 
-**Validation boundary:** The code-first source setup passed automated
-repository-contract checks and an author-run **local Ubuntu/WSL2** build of
-the original ns-3.47 variant. A recorded seed-224 baseline simulation
-completed with **24 flow-completion records and 19 research output files**.
-The external variant, independent-host execution, and exact comparison of
-this source-built run with historical reference traces remain unverified.
-The source-first smoke test is **not equivalent** to the proven 360/360
-archival ZIP reproduction. For exact historical output matching, use the
-original ZIP and the next section.
+**Validation boundary (2026-11-12):** The code-first setup passed
+automated contract checks and local Ubuntu/WSL2 builds of **both** ns-3.47
+variants. The original seed-224 baseline completed **24 flow records and 19
+output files**. The external WebSearch 60%/seed-230 baseline completed
+**240 flow records and 19 output files**, followed by **19/19 exact archived
+trace SHA-256 matches and 12/12 accepted scientific metric matches**.
+These are author-run local results for selected cases, **not**
+independent-host verification or complete source-first reproduction of all
+360 cases. The separate full archival ZIP pathway remains the documented
+360/360 verified workflow. See the [source verification scope](docs/RUN_FROM_SOURCE.md).
 
 ## Quick start: reproduce all 360 accepted simulations
 
