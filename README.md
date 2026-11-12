@@ -76,6 +76,25 @@ executable ns-3 tree. For complete reproducibility, download v1.0.0 and use
 the full replay procedure below. The release ZIP is still the authoritative
 complete scientific artifact.
 
+## Getting started: build and run from upstream ns-3.47 source
+
+For researchers who want to **run the implementation without downloading the
+large reference dataset**, use the separate
+**[code-first ns-3.47 setup and one-run guide](docs/RUN_FROM_SOURCE.md)**.
+It installs the exact research-specific C++ modifications and frozen models
+from this Git repository into a new copy of clean upstream ns-3.47, builds
+with CMake/Ninja, and executes a selected **recorded seed/controller case**.
+
+Both original (seed 224) and external synthetic workload (seed 230) examples
+are documented. No archived raw output traces need to be downloaded to run a
+case from source.
+
+**Validation boundary:** The source-first path has offline repository-contract
+checks but has **not yet passed a separate clean-upstream ns-3 build/run in
+this environment**. Its one-case smoke check is not equivalent to the proven
+360/360 full archival ZIP reproduction. For already verified exact historical
+output matching, use the original ZIP and the next section.
+
 ## Quick start: reproduce all 360 accepted simulations
 
 Tested environment: Linux under Ubuntu/WSL2 on x86_64; Python 3.14.4 and NumPy 2.3.5 were reported by the successful reproduction. The verifier also needs a C++ toolchain, CMake, and Ninja. Budget **at least 30 GiB free disk space** for extraction, two simulator builds, and fresh results. The successful local run reported approximately 24 minutes elapsed; other systems may differ significantly.
@@ -129,6 +148,10 @@ docs/
   BROWSABLE_FILES.md              Provenance and limitations of Git-tracked subset
   ARCHIVE_INVENTORY.md            Integrity and 11,010-file package inventory
   ARCHIVE_SIZE_AND_PRESERVATION.md ZIP size, lossless options, audit procedure
+  RUN_FROM_SOURCE.md              Clean ns-3.47 code-first setup and smoke run
+run_from_source.py                 Builds isolated original/external source workspaces
+tests/                             Offline research SHA-256 and command checks
+.github/workflows/                 Automated source-contract checks
 .gitattributes                     Preserve archived CSV line endings
 .gitignore                         Avoid large generated outputs in Git history
 ```
