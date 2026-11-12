@@ -18,6 +18,13 @@ from clean upstream source and executed successfully:
   A separate read-only comparison against the archived accepted reference
   showed **19/19 exact raw-trace SHA-256 matches** and **12/12 accepted
   metric-field matches**, using the archived external scientific validator.
+- **External predictive ML:** WebSearch CDF-derived workload, nominal 60%
+  offered load, seed 230, `ml_5ms`, 240 completed-flow records and 19 output
+  files. The **original frozen 5 ms predictor** passed its pinned SHA-256
+  check (`30372baf1843d5b9aec84bf95644a731637f5d3bcb5e8bcbd4fcd9e7555a7146`).
+  A separate read-only archival comparison showed **19/19 exact raw-trace
+  SHA-256 matches** and **12/12 scientific metric-field matches**, using the
+  same archived external scientific validator.
 
 These are **author-run local tests**, not independent-host reproduction or
 verification of every controller and condition. The previous **360/360**
@@ -182,6 +189,43 @@ only as the reference for this subsequent validation. This establishes exact
 **local one-case** agreement for the external baseline, rather than
 independent third-party replication or complete source-first study reproduction.
 No accepted archive files or scientific measurements were altered.
+
+## Exact comparison of the predictive ML controller
+
+After setting up the source-based external variant, the authors ran the
+accepted `ml_5ms` WebSearch 60% / seed-230 configuration:
+
+```bash
+python3 run_from_source.py run \
+  --workspace "$HOME/ecn-source-external" \
+  --controller ml_5ms --seed 230 --dataset WebSearch --load 60
+```
+
+The reported execution completed **240 flow records** and generated **19
+research output files**. A separate local read-only check against the
+corresponding archived case in
+`external_validation/external_evaluation_180/WebSearch/load_60/seed_230/ml_5ms/`
+found:
+
+```text
+PASS: 19/19 raw traces match
+PASS: Frozen 5 ms ML model SHA-256
+PASS: ALL ML 5ms RAW TRACES MATCH EXACTLY
+PASS: ALL 12 SCIENTIFIC METRIC FIELDS MATCH
+PASS: SOURCE-BASED ML 5ms REPRODUCTION
+```
+
+The comparison also authenticated the local frozen model, validated the
+input manifest's SHA-256, and recomputed the 12 accepted fields with the
+archived `run_external_180.py` validator. The analysis uses the same
+scientific tolerances as the archived full reproducer (absolute difference
+no greater than `1e-9` for floating-point metric fields). The data were
+not retrained or modified; no source archive or release asset was changed.
+
+This result demonstrates exact **local single-case source-based** agreement
+for an actual ML predictor, in addition to the previously verified baseline.
+It does not prove all remaining ML settings or all 360 archived cases would
+match when reconstructed independently.
 
 ## What this does not claim
 
