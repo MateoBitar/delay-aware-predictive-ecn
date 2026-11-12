@@ -4,14 +4,17 @@ This is the conventional, **code-first** entry point for the published research.
 It does **not** require the 1.22 GB reference ZIP or the 541 MB 7z archive
 to build and execute one of the **recorded original or external experiments**.
 
-**Scope and evidence:** This path uses the exact verified research-specific
-C++ source and frozen predictor models already browsable in GitHub, and reads
-recorded `command.json` files. The code-first setup has automated offline
-contract checks, but **a successful clean upstream build and execution on an
-independent system has not yet been established**. The previously reported
-360/360 exact reproduction applies exclusively to the archived ZIP workflow,
-not to the instructions below. Do not cite the code-first path as independently
-verified until you run the test below successfully.
+**Scope and evidence (2026-11-12):** This path uses the exact verified
+research-specific C++ source and frozen predictor models already browsable in
+GitHub, and reads recorded `command.json` files. The code-first setup has
+automated offline contract checks. The authors additionally reported a
+**successful local Ubuntu/WSL2 clean-upstream source build** for the original
+variant and a seed-224 `baseline` smoke run:
+`SMOKE TEST PASS: 24 completed-flow records, 19 research output files`.
+This confirms execution from source on that host, **not** independent-host
+reproduction, exact historical trace equality, the other controllers, or the
+external variant. The previously reported **360/360** exact reproduction
+applies exclusively to the archived ZIP workflow.
 
 ## 1. Install dependencies (Ubuntu / WSL2)
 
