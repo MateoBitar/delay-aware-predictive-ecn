@@ -1,0 +1,24 @@
+name: Source-path offline contract checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  contracts:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Python syntax validation
+        run: python3 -m py_compile run_from_source.py reproduce_full_research_FIXED.py audit_release_archive.py tests/test_source_contract.py
+      - name: Research source and recorded-command contracts
+        run: python3 -m unittest discover -s tests -p "test_*.py" -v
+      - name: Source-first runner command-line contract
+        run: |
+          python3 run_from_source.py --help
+          python3 run_from_source.py setup --help
+          python3 run_from_source.py run --help
