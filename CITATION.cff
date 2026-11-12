@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "Please cite this repository as an unpublished research artifact until a corresponding paper is published."
+type: software
+title: "Delay-Aware Predictive ECN for Bursty Datacenter Traffic: Research Artifact"
+authors:
+  - family-names: Bitar
+    given-names: Marco
+  - family-names: Bitar
+    given-names: Matéo
+repository-code: "https://github.com/MateoBitar/delay-aware-predictive-ecn"
+url: "https://github.com/MateoBitar/delay-aware-predictive-ecn/releases/tag/v1.0.0"
+version: "1.0.0"
+date-released: "2026-11-12"
+keywords:
+  - ECN
+  - DCTCP
+  - ns-3
+  - datacenter congestion control
+  - reproducibility

@@ -1,3 +1,25 @@
+# The verified 1.22 GB archive is a GitHub Release asset, NOT a Git blob.
 *.zip
+*.7z
+*.tar
+*.tar.gz
+*.tgz
+*.rar
+
+# Locally built ns-3 products and simulation outputs.
 __pycache__/
-*.pyc
+*.py[cod]
+.venv/
+venv/
+cmake-cache/
+CMakeFiles/
+.ninja_deps
+.ninja_log
+build/
+
+# Local research workspaces and generated logs/reports.
+ECN_FULL_360_INDEPENDENT_REPRODUCTION/
+ecn-independent-reproduction/
+*.log
+.DS_Store
+Thumbs.db

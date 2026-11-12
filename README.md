@@ -1,11 +1,104 @@
 # Delay-Aware Predictive ECN for Bursty Datacenter Traffic
 
+**Research artifact | ns-3.47 | TCP/DCTCP | Explicit Congestion Notification (ECN)**
+
 **Authors:** Marco Bitar and Matéo Bitar
+**Project:** CMPS 342, Advanced Computer Networks, American University of Beirut (Fall 2026)
 
-This repository contains the independent reproduction script and verification report for 360 ns-3.47 experiments.
+This repository accompanies a simulation study asking **when, and whether, lightweight queue prediction improves congestion control beyond conventional DCTCP/ECN and simpler early-marking mechanisms**. We compare six controllers under paired traffic configurations rather than attributing every benefit from earlier marking to machine learning.
 
-The complete research archive, including simulator source, frozen ML models, experimental traces, and analysis, is available under GitHub Releases.
+> **Artifact status:** Public research artifact; not a claim of IEEE acceptance or an official reproducibility badge. The 360 archived experiments were rerun and verified in an isolated workspace on the authors' WSL2 host. Independent cross-host reproduction has not yet been established.
 
-**Reproduction:** 360/360 experiments verified; 5,148 raw traces matched; 4,320 metric fields matched; four scientific CSVs reproduced exactly.
+## Research design
 
-**Archive SHA-256:** `b26bfb7bcb26702ef88a6d29e3515e48d188988e31db7ad8edd243712304194c`
+Six controller settings are compared:
+
+| Setting | Description |
+| --- | --- |
+| `baseline` | Standard reactive ECN thresholds |
+| `lower_fixed` | Lower fixed early-marking thresholds, without prediction |
+| `trend` | Non-ML queue-trend predictor |
+| `ml_2ms` | Frozen ML predictor, 2 ms horizon |
+| `ml_5ms` | Frozen ML predictor, 5 ms horizon |
+| `ml_20ms` | Frozen ML predictor, 20 ms horizon |
+
+The accepted campaign comprises **360 simulations**:
+
+- **180 original runs:** reference comparison (36), burst-size sensitivity (72), and per-link propagation-delay sensitivity (72), across paired seeds 224–229.
+- **180 external-workload runs:** WebSearch- and FB_Hadoop-shaped traffic at selected nominal offered loads, across paired seeds 230–235.
+
+External traffic uses **flow-size CDF-derived synthetic workloads** with generated arrival schedules; it is **not** a replay of original production packet traces. The propagation-delay study changes physical-link delay, not an independently injected ECN processing delay. Models were frozen during evaluation; model training is **not** included in the independent replay.
+
+The main outcomes are mean, P95, and P99 short-flow completion time (FCT), supplemented by queue occupancy/delay, ECN marking, application goodput, and sender fairness. The analysis evaluates both latency benefit and throughput/fairness trade-offs. Paired uncertainty estimates should be read as exploratory, particularly with only six seeds per condition and no multiple-comparison correction.
+
+## Get the complete artifact
+
+The complete scientific package is published as an **immutable-in-practice versioned release asset**, not committed into Git history:
+
+**[Download release v1.0.0](https://github.com/MateoBitar/delay-aware-predictive-ecn/releases/tag/v1.0.0)** — `Delay_Aware_Predictive_ECN_RESEARCHER_READY.zip` (1,218,601,406 bytes).
+
+SHA-256 of the original published archive:
+
+```text
+b26bfb7bcb26702ef88a6d29e3515e48d188988e31db7ad8edd243712304194c
+```
+
+The release contains the modified ns-3.47 simulator, both experiment variants, frozen predictor models, recorded configurations and input manifests, 360 accepted runs and raw traces, analysis tools, and research documentation. See [artifact guide](docs/ARTIFACT_GUIDE.md) and [archive inventory](docs/ARCHIVE_INVENTORY.md).
+
+## Quick start: reproduce all 360 accepted simulations
+
+Tested environment: Linux under Ubuntu/WSL2 on x86_64; Python 3.14.4 and NumPy 2.3.5 were reported by the successful reproduction. The verifier also needs a C++ toolchain, CMake, and Ninja. Budget **at least 30 GiB free disk space** for extraction, two simulator builds, and fresh results. The successful local run reported approximately 24 minutes elapsed; other systems may differ significantly.
+
+```bash
+# Install system build tools on Ubuntu (package availability depends on release).
+sudo apt update
+sudo apt install -y build-essential cmake ninja-build python3 python3-numpy
+
+# In a clone of this repository, obtain the v1.0.0 ZIP from the Releases page,
+# and save it outside the Git repository, e.g. $HOME/Downloads/.
+sha256sum "$HOME/Downloads/Delay_Aware_Predictive_ECN_RESEARCHER_READY.zip"
+
+# Compare its digest to the pinned SHA-256 above, then run:
+python3 reproduce_full_research_FIXED.py \
+  --zip "$HOME/Downloads/Delay_Aware_Predictive_ECN_RESEARCHER_READY.zip" \
+  --workspace "$HOME/ecn-independent-reproduction" \
+  --jobs 1
+```
+
+A successful complete run reports `SUCCESS: FULL 360-EXPERIMENT REPRODUCTION PASSED` and writes `FINAL_REPRODUCTION_REPORT.json` to the requested workspace. The verifier authenticates the ZIP contents, rebuilds the original and external ns-3.47 variants, reruns all recorded configurations, checks preserved traces and run-level metrics, and regenerates four external scientific analysis CSVs. It does **not** retrain the ML models. See [detailed reproduction instructions](docs/REPRODUCIBILITY.md).
+
+## Verified evidence
+
+The [final verification report](FINAL_REPRODUCTION_REPORT.json) records the following results from one local independent-workspace verification:
+
+| Verification | Recorded result |
+| --- | ---: |
+| Accepted configurations rerun and verified | **360 / 360** |
+| Original / external configurations | **180 / 180** each |
+| Raw trace file comparisons | **5,148 matched** |
+| Per-run scientific metric fields | **4,320 matched** |
+| Regenerated external scientific CSVs | **4 / 4 SHA-256 matched** |
+
+These results substantiate local reproducibility **under the tested environment**. They are not an external third-party evaluation, peer-review acceptance, or proof of identical behavior on every operating system or compiler.
+
+## Repository organization
+
+```text
+README.md                          Project landing page and quick start
+reproduce_full_research_FIXED.py   Full 360-experiment verification orchestrator
+FINAL_REPRODUCTION_REPORT.json     Machine-readable accepted verification evidence
+CITATION.cff                       Citation metadata (research artifact, unpublished)
+docs/
+  ARTIFACT_GUIDE.md               Components, experiment matrix, interpretation
+  REPRODUCIBILITY.md              Setup, commands, checks, limitations
+  ARCHIVE_INVENTORY.md            ZIP member inventory without repackaging
+.gitignore                         Excludes large/archive-generated files
+```
+
+The full simulator and experimental results are provided by the **release asset**, not as ordinary Git-tracked files. No accepted experimental data were removed or modified in this GitHub documentation update.
+
+## Citation and reuse
+
+Please cite the project as an **unpublished research artifact** until a paper or DOI becomes available. Citation metadata are provided in [CITATION.cff](CITATION.cff); an IEEE journal/conference citation will be added only after publication. See [reproducibility limitations](docs/REPRODUCIBILITY.md#limitations-and-scope).
+
+**Licensing note:** The package includes ns-3 and potentially other third-party components with their own licensing terms. No blanket license is asserted for those third-party works. Redistribution and licensing of authors' original contributions should be confirmed before choosing a repository-wide `LICENSE` file; absence of a new `LICENSE` does not grant additional reuse rights.
