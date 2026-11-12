@@ -5,9 +5,12 @@
 This repository publishes research-specific source files and a complete
 ns-3.47 research release. The repository is publicly accessible, but public
 availability alone **does not constitute a universal license to reuse or
-redistribute every file**. This document identifies the observed licensing
-boundaries without asserting ownership of upstream software or granting a
-new license on behalf of the authors.
+redistribute every file**. The authors' original software contributions are now offered under
+**GPL-2.0-only**, with the unmodified license text in [LICENSE](../LICENSE).
+The exact project-code scope and exclusions are documented in
+[LICENSE_SCOPE.md](../LICENSE_SCOPE.md). This document identifies
+third-party provenance and remaining permissions without claiming
+ownership of upstream software or blanket relicensing of datasets.
 
 ## ns-3.47 and modified upstream source
 
@@ -60,12 +63,14 @@ or other dependencies. **Listing a path as research-specific is not a
 legal conclusion that all its code is solely owned by the named authors.**
 
 The two experiment C++ files currently have no explicit top-of-file
-license declaration. Their authors and any other applicable rights
-holders need to confirm the intended redistribution license (and
-whether copied third-party material is present) before a blanket
-license is applied. If they are derived from ns-3 GPL-licensed
-examples, GPL-2.0-only compatibility and preservation of upstream
-notices will be relevant.
+license declaration. The repository-level
+[LICENSE_SCOPE.md](../LICENSE_SCOPE.md) now explicitly offers **the
+authors' original contributions** to these files under GPL-2.0-only
+without changing the archived or Git-tracked C++ source bytes. Any
+ns-3-derived code in these files and any other copied third-party
+material retains its existing licensing and attribution obligations.
+A separate file-level third-party provenance audit is still advised
+before upstream contribution or redistribution outside this package.
 
 ## External workload datasets
 
@@ -83,8 +88,10 @@ is asserted here.
 
 - The existence of a public GitHub repository and downloadable
   research artifacts does not confer unrestricted reuse rights.
-- The repository's lack of a blanket `LICENSE` file does **not**
-  override license conditions already present in third-party files.
+- The root `LICENSE` grants GPL-2.0-only terms for **the authors' original
+  software contributions only**; it does not override license conditions
+  already present in third-party files, nor automatically license
+  dataset/model assets.
 - ns-3 source retains its upstream terms and component-specific
   notices.
 - `CITATION.cff` asks for scholarly attribution; a request to cite is
@@ -93,20 +100,23 @@ is asserted here.
   third-party licenses, but any further redistribution or modification
   should comply with all relevant rights and notices.
 
-## Before selecting a project-wide license
+## Remaining provenance and rights checks
 
-1. Confirm with Marco Bitar, Matéo Bitar, and any other rights
-   holders or institution holding rights over the original
-   contributions that they agree to the proposed license.
-2. Check whether research-specific C++ examples incorporate ns-3
-   GPL-2.0-only code or other licensed material; document their
-   provenance and retain attribution.
-3. Review component licenses shipped in the exact ns-3.47 tree and
-   any third-party data used to build workload CDFs.
-4. Choose and document compatible software and data licensing
-   **separately where appropriate**. Do not automatically apply one
-   permissive license across third-party ns-3 files.
+The code license has been selected, but this is **not** a completed
+component-by-component rights audit of every file in the 11,011-file
+research artifact.
 
-This page records factual provenance and pending licensing decisions.
-It is **not legal advice or a substitute for the license files included
-with the corresponding source distributions**.
+1. Preserve upstream attribution and GPL-2.0-only / compatible component
+   terms in the copied ns-3.47 files.
+2. Review whether external CDF sources or derived model/data products carry
+   independent redistribution requirements.
+3. Confirm any additional institutional or contributor rights if the
+   original contributions have more copyright holders than the two
+   identified authors.
+4. Decide separately whether to grant an explicit license for generated
+   datasets, frozen model files, or figures. No such license is asserted
+   here.
+
+This page documents software licensing scope and third-party provenance.
+It is **not legal advice or a substitute for individual license notices
+included with corresponding upstream source distributions**.
