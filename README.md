@@ -89,11 +89,15 @@ Both original (seed 224) and external synthetic workload (seed 230) examples
 are documented. No archived raw output traces need to be downloaded to run a
 case from source.
 
-**Validation boundary:** The source-first path has offline repository-contract
-checks but has **not yet passed a separate clean-upstream ns-3 build/run in
-this environment**. Its one-case smoke check is not equivalent to the proven
-360/360 full archival ZIP reproduction. For already verified exact historical
-output matching, use the original ZIP and the next section.
+**Validation boundary:** The code-first source setup passed automated
+repository-contract checks and an author-run **local Ubuntu/WSL2** build of
+the original ns-3.47 variant. A recorded seed-224 baseline simulation
+completed with **24 flow-completion records and 19 research output files**.
+The external variant, independent-host execution, and exact comparison of
+this source-built run with historical reference traces remain unverified.
+The source-first smoke test is **not equivalent** to the proven 360/360
+archival ZIP reproduction. For exact historical output matching, use the
+original ZIP and the next section.
 
 ## Quick start: reproduce all 360 accepted simulations
 
