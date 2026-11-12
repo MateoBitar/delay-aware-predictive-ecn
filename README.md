@@ -146,6 +146,8 @@ These results substantiate local reproducibility **under the tested environment*
 
 ```text
 README.md                          Project landing page and quick start
+LICENSE                            GNU GPL version 2 license text
+LICENSE_SCOPE.md                   Rights and exclusions for original research code
 CITATION.cff                       Citation metadata for the v1.0.0 artifact
 reproduce_full_research_FIXED.py   Full 360-experiment verification orchestrator
 FINAL_REPRODUCTION_REPORT.json     Recorded independent-workspace verification
@@ -181,4 +183,4 @@ The release ZIP is the authoritative source for the 360-run verified dataset.
 
 Please cite the project as an **unpublished research artifact** until a paper or DOI becomes available. Citation metadata are provided in [CITATION.cff](CITATION.cff); an IEEE journal/conference citation will be added only after publication. See [reproducibility limitations](docs/REPRODUCIBILITY.md#limitations-and-scope).
 
-**Licensing note:** The simulator contains upstream ns-3.47 code, including GPL-2.0-only components and other file-specific notices. We retain those notices and do not impose a new blanket license over them. Rights holders must confirm licensing of research-original material separately. Read [licensing and third-party provenance](docs/LICENSING_AND_PROVENANCE.md) for the specific source-file boundaries and outstanding decisions. Absence of a project-wide `LICENSE` does not remove third-party license obligations or grant unrestricted reuse rights.
+**Software license:** The authors' original software contributions are available under **GNU GPL-2.0-only**; see [LICENSE](LICENSE) for the unmodified license terms and [LICENSE_SCOPE.md](LICENSE_SCOPE.md) for exactly which research code is covered. Modified and bundled ns-3.47 code continues to carry its original third-party licensing and attribution requirements. **Frozen models, raw/derived datasets, results and figures are not automatically licensed by the software GPL.** See [licensing and third-party provenance](docs/LICENSING_AND_PROVENANCE.md) for the remaining data/model and component-rights checks.
