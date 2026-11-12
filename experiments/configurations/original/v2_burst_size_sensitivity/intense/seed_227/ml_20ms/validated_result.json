@@ -1,0 +1,19 @@
+{
+  "severity": "intense",
+  "short_flow_base_bytes": 150000,
+  "seed": 227,
+  "controller": "ml_20ms",
+  "mean_fct_ms": 108.83266454166669,
+  "p95_fct_ms": 139.6540592,
+  "p99_fct_ms": 141.58352437,
+  "mean_queue_packets": 11.491,
+  "peak_queue_packets": 145.0,
+  "completed_flows": 24,
+  "manifest_hash": "63e11eac549969f378f2c9ea37a046e7632f8b47e2d81f2287ccca5664eae1b3",
+  "offered_short_bytes": 3578899,
+  "short_goodput_mbps": 5.726238400000001,
+  "background1_goodput_mbps": 12.632883199999998,
+  "background2_goodput_mbps": 11.907072,
+  "aggregate_goodput_mbps": 30.2661936,
+  "background_runwide_jain": 0.999125982651578
+}

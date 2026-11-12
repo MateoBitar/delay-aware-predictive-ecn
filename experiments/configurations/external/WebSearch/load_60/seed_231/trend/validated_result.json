@@ -1,0 +1,17 @@
+{
+  "controller": "trend",
+  "completed_flows": 240,
+  "short_flows": 147,
+  "large_flows": 93,
+  "mean_short_fct_ms": 43.89161097278912,
+  "p95_short_fct_ms": 161.6698562999998,
+  "p99_short_fct_ms": 347.53704376,
+  "mean_large_fct_ms": 917.9796669892473,
+  "ml_inference_records": 132624,
+  "early_activations": 226,
+  "early_releases": 226,
+  "manifest_sha256": "1b94cec46b7469749b8f68472e15b427df8dee18b46123b4d8bca54406c15d13",
+  "dataset": "WebSearch",
+  "load_percent": 60,
+  "seed": 231
+}

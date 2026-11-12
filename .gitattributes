@@ -1,0 +1,2 @@
+# Preserve archived scientific CSV bytes and line endings.
+*.csv -text

@@ -1,0 +1,18 @@
+[
+  "/home/Mateo_Bitar/ns3-external-validation/ns-3.47/build/examples/tcp/ns3.47-bursty-dctcp-baseline-default",
+  "--externalManifestPath=/home/Mateo_Bitar/ns3-external-validation/external_evaluation_180/FB_Hadoop/load_60/seed_234/trend/input_manifest.csv",
+  "--workloadMode=intermittent",
+  "--burstSchedule=original",
+  "--workloadVariation=none",
+  "--delAckTimeoutMs=20",
+  "--RngSeed=1",
+  "--RngRun=234",
+  "--controllerMode=trend-prediction-release",
+  "--minTh=20",
+  "--maxTh=60",
+  "--earlyMinTh=10",
+  "--earlyMaxTh=30",
+  "--predictorHorizonMs=5",
+  "--minActiveMs=10",
+  "--negativeReleaseSamples=5"
+]

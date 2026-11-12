@@ -1,0 +1,17 @@
+{
+  "controller": "ml_20ms",
+  "completed_flows": 240,
+  "short_flows": 227,
+  "large_flows": 13,
+  "mean_short_fct_ms": 18.294439149779734,
+  "p95_short_fct_ms": 58.40629,
+  "p99_short_fct_ms": 69.81998402000004,
+  "mean_large_fct_ms": 258.0347346153846,
+  "ml_inference_records": 18471,
+  "early_activations": 32,
+  "early_releases": 32,
+  "manifest_sha256": "ef9f296eb9951834227967f8bb455c7d0d6c0e906414812081dc5b94dedaf1f4",
+  "dataset": "FB_Hadoop",
+  "load_percent": 60,
+  "seed": 230
+}

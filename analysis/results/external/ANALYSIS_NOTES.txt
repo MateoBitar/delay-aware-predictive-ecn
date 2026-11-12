@@ -1,0 +1,13 @@
+Analysis: 180 frozen-model external-workload runs.
+Unit of pairing: workload seed (six seeds per condition).
+Metrics: mean of six per-seed short-flow metrics.
+Relative changes: mean of six paired percentage changes.
+Positive change means worse FCT than baseline.
+Confidence intervals: exploratory paired seed bootstrap,
+10,000 resamples, percentile method, two-sided 95%.
+These intervals are not multiple-comparison adjusted.
+With only six seeds, uncertainty estimates are limited.
+P95/P99 are averaged across run-level quantiles;
+they are not quantiles of pooled flow completions.
+The offered-load percentages are nominal, not
+measurements of actual bottleneck utilization.

@@ -1,0 +1,5 @@
+[
+  "./ns3",
+  "run",
+  "bursty-dctcp-baseline --workloadMode=intermittent --burstSchedule=aligned --workloadVariation=controlled --workloadSeed=224 --backgroundJitterMs=10 --shortFlowJitterMs=5 --shortFlowSizeVariation=0.30 --delAckTimeoutMs=20 --RngSeed=1 --RngRun=101 --controllerMode=ml-prediction-release --mlModelPath=research_horizon_study/horizon_models/predictor_5ms.model --predictorHorizonMs=5 --minTh=20 --maxTh=60 --earlyMinTh=10 --earlyMaxTh=30 --minActiveMs=10 --negativeReleaseSamples=5 --shortFlowBaseBytes=50000"
+]

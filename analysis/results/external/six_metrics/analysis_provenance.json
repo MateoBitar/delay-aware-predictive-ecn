@@ -1,0 +1,17 @@
+{
+  "input_results_file": "/home/Mateo_Bitar/ns3-external-validation/external_evaluation_180/results_180_runs.csv",
+  "input_results_sha256": "d3f351245e72089360654ca94785320e503705ebb3bb017ce102336fd2a112c6",
+  "campaign_config_sha256": "74681532a5ce18ccac580c9b487b753efc98dda626036abd941f65995a87c69e",
+  "runs_analyzed": 180,
+  "summary_rows": 30,
+  "fairness_bin_seconds": 0.1,
+  "short_flow_cutoff_bytes": 250000,
+  "definitions": {
+    "fct": "Previously validated short-flow FCT",
+    "flow_goodput": "Payload bytes * 8 / individual flow FCT",
+    "arrival_window_goodput": "Payload received between first and last scheduled flow arrival, divided by this fixed per-manifest interval",
+    "fairness": "Mean Jain index of per-sender delivered bytes in 100 ms bins with at least two senders each active for at least 50 ms. Descriptive proxy, demand-sensitive.",
+    "queue": "Sample-based occupancy and delay from 1 ms simulator traces",
+    "overhead": "Inference and control activity counts; not measured CPU time or network overhead"
+  }
+}

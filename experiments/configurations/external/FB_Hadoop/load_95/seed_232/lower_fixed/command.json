@@ -1,0 +1,13 @@
+[
+  "/home/Mateo_Bitar/ns3-external-validation/ns-3.47/build/examples/tcp/ns3.47-bursty-dctcp-baseline-default",
+  "--externalManifestPath=/home/Mateo_Bitar/ns3-external-validation/external_evaluation_180/FB_Hadoop/load_95/seed_232/lower_fixed/input_manifest.csv",
+  "--workloadMode=intermittent",
+  "--burstSchedule=original",
+  "--workloadVariation=none",
+  "--delAckTimeoutMs=20",
+  "--RngSeed=1",
+  "--RngRun=232",
+  "--controllerMode=baseline",
+  "--minTh=10",
+  "--maxTh=30"
+]

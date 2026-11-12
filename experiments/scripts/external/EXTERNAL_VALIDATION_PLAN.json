@@ -1,0 +1,56 @@
+{
+  "study": "External workload validation of predictive ECN",
+  "ns3_version": "3.47",
+  "existing_runs": 180,
+  "planned_additional_runs": 180,
+  "planned_total_runs": 360,
+  "controllers": [
+    "baseline",
+    "lower_fixed",
+    "trend",
+    "ml_2ms",
+    "ml_5ms",
+    "ml_20ms"
+  ],
+  "evaluation_seeds": [
+    230,
+    231,
+    232,
+    233,
+    234,
+    235
+  ],
+  "conditions": [
+    {
+      "workload": "WebSearch",
+      "target_load": 0.6
+    },
+    {
+      "workload": "WebSearch",
+      "target_load": 0.8
+    },
+    {
+      "workload": "WebSearch",
+      "target_load": 0.95
+    },
+    {
+      "workload": "FB_Hadoop",
+      "target_load": 0.6
+    },
+    {
+      "workload": "FB_Hadoop",
+      "target_load": 0.95
+    }
+  ],
+  "datasets": {
+    "WebSearch_distribution.txt": {
+      "sha256": "523d92fd941790c770a7a4cbdffaf715e043ef9fd4da2db6374852716bee5ed6",
+      "source": "https://github.com/alibaba-edu/High-Precision-Congestion-Control/tree/master/traffic_gen"
+    },
+    "FbHdp_distribution.txt": {
+      "sha256": "0cb8d61d7911d633bbd115bb343fd6fb14dcbd3666fe9159bfaa9b1bc101c301",
+      "source": "https://github.com/alibaba-edu/High-Precision-Congestion-Control/tree/master/traffic_gen"
+    }
+  },
+  "status": "planned_not_yet_executed"
+}

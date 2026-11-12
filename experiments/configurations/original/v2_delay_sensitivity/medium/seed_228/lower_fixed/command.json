@@ -1,0 +1,5 @@
+[
+  "./ns3",
+  "run",
+  "bursty-dctcp-baseline --workloadMode=intermittent --burstSchedule=aligned --workloadVariation=controlled --workloadSeed=228 --backgroundJitterMs=10 --shortFlowJitterMs=5 --shortFlowSizeVariation=0.30 --delAckTimeoutMs=20 --RngSeed=1 --RngRun=101 --controllerMode=baseline --minTh=10 --maxTh=30 --linkDelayUs=250"
+]

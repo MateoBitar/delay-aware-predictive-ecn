@@ -1,0 +1,19 @@
+{
+  "delay_condition": "medium",
+  "link_delay_us": 250,
+  "seed": 229,
+  "controller": "baseline",
+  "mean_fct_ms": 97.53686329166668,
+  "p95_fct_ms": 129.9189726,
+  "p99_fct_ms": 131.92789486,
+  "mean_queue_packets": 16.339,
+  "peak_queue_packets": 192.0,
+  "completed_flows": 24,
+  "manifest_hash": "9f7eaeafc1b6a1fcd06259f9bd7109ba22daca9f579b62c563db24021aff4ad2",
+  "offered_short_bytes": 2516638,
+  "short_goodput_mbps": 4.0266208,
+  "background1_goodput_mbps": 12.4239872,
+  "background2_goodput_mbps": 11.890688,
+  "aggregate_goodput_mbps": 28.341296,
+  "background_runwide_jain": 0.999519165030298
+}

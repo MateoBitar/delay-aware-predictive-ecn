@@ -1,0 +1,37 @@
+{
+  "source_file": "/home/Mateo_Bitar/ns3-external-validation/external_analysis/six_metrics/six_metrics_180_runs.csv",
+  "source_sha256": "542d16006f13a9d80e159b72f51b489cf00e71989fd6bdf24d9d74e89c93e7dc",
+  "run_count": 180,
+  "conditions": 5,
+  "controller_reference_pairs_per_condition": 11,
+  "metrics": {
+    "p95_short_fct_ms": "lower",
+    "p99_short_fct_ms": "lower",
+    "mean_short_flow_goodput_mbps": "higher",
+    "mean_large_flow_goodput_mbps": "higher",
+    "arrival_window_goodput_mbps": "higher",
+    "sender_fairness_jain_100ms": "higher",
+    "mean_queue_packets": "lower",
+    "p95_queue_packets": "lower",
+    "max_queue_packets": "lower",
+    "mean_queue_delay_us": "lower",
+    "p95_queue_delay_us": "lower",
+    "fraction_queue_ge_20": "lower",
+    "fraction_queue_ge_60": "lower",
+    "ecn_marks_total": "descriptive",
+    "ecn_forced_marks": "descriptive",
+    "early_activations": "descriptive",
+    "inference_per_simulated_second": "descriptive"
+  },
+  "comparisons": 935,
+  "bootstrap": "10,000 paired-seed resamples; exploratory 95% percentile intervals; no multiplicity correction",
+  "limitations": [
+    "Six independent seeds per condition",
+    "Goodput measured at application layer",
+    "Fairness is a demand-sensitive active-sender proxy",
+    "Fairness-eligible windows vary by controller",
+    "Inference activity is not CPU-time measurement",
+    "Offered load is nominal, not measured utilization",
+    "No correction for multiple comparisons"
+  ]
+}

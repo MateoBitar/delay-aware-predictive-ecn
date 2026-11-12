@@ -1,0 +1,16 @@
+{
+  "seed": 229,
+  "controller": "ml_2ms",
+  "mean_fct_ms": 92.22690729166665,
+  "p95_fct_ms": 129.5895867,
+  "p99_fct_ms": 132.14688834,
+  "mean_queue_packets": 9.857,
+  "peak_queue_packets": 133.0,
+  "completed_flows": 24,
+  "manifest_hash": "9f7eaeafc1b6a1fcd06259f9bd7109ba22daca9f579b62c563db24021aff4ad2",
+  "short_goodput_mbps": 4.0266208,
+  "background1_goodput_mbps": 12.5231104,
+  "background2_goodput_mbps": 11.89888,
+  "aggregate_goodput_mbps": 28.4486112,
+  "background_runwide_jain": 0.9993471038979252
+}

@@ -45,6 +45,23 @@ b26bfb7bcb26702ef88a6d29e3515e48d188988e31db7ad8edd243712304194c
 
 The release contains the modified ns-3.47 simulator, both experiment variants, frozen predictor models, recorded configurations and input manifests, 360 accepted runs and raw traces, analysis tools, and research documentation. See [artifact guide](docs/ARTIFACT_GUIDE.md) and [archive inventory](docs/ARCHIVE_INVENTORY.md).
 
+## Browse the research code and accepted results
+
+You can inspect the **research-specific ns-3 modifications**, frozen model
+files, all **360 recorded run configurations and accepted validations**, and
+accepted analysis tables directly in this Git repository:
+
+- [Implementation source](src/) — RED/ECN modifications and original/external TCP variants.
+- [Frozen prediction models](models/) — evaluation models and historical horizon summaries.
+- [Experiment drivers and 360 configurations](experiments/) — command records, metrics and external manifests.
+- [Analysis scripts and accepted external results](analysis/) — scientific tables, plots and verification utilities.
+- [Browsable files guide](docs/BROWSABLE_FILES.md) — relationship between these subsets and the exact release archive.
+
+These are **selected copies from the verified ZIP**, not a second separately
+executable ns-3 tree. For complete reproducibility, download v1.0.0 and use
+the full replay procedure below. The release ZIP is still the authoritative
+complete scientific artifact.
+
 ## Quick start: reproduce all 360 accepted simulations
 
 Tested environment: Linux under Ubuntu/WSL2 on x86_64; Python 3.14.4 and NumPy 2.3.5 were reported by the successful reproduction. The verifier also needs a C++ toolchain, CMake, and Ninja. Budget **at least 30 GiB free disk space** for extraction, two simulator builds, and fresh results. The successful local run reported approximately 24 minutes elapsed; other systems may differ significantly.

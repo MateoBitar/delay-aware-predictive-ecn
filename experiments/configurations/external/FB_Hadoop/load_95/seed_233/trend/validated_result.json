@@ -1,0 +1,17 @@
+{
+  "controller": "trend",
+  "completed_flows": 240,
+  "short_flows": 224,
+  "large_flows": 16,
+  "mean_short_fct_ms": 26.38904275,
+  "p95_short_fct_ms": 58.634882850000004,
+  "p99_short_fct_ms": 179.9592648300013,
+  "mean_large_fct_ms": 531.7799040625,
+  "ml_inference_records": 17828,
+  "early_activations": 22,
+  "early_releases": 22,
+  "manifest_sha256": "d46bde68749b1a6e40ec64f97a2688e9ee21e9896b998f3fa35318e3faaee0ee",
+  "dataset": "FB_Hadoop",
+  "load_percent": 95,
+  "seed": 233
+}

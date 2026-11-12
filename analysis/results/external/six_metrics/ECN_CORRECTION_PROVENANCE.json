@@ -1,0 +1,13 @@
+{
+  "date": "2026-11-05T18:46:21.877947",
+  "correction": "Reclassified forced/unforced ECN marks from original traces; replaced Figures 08, 09 and 12",
+  "per_run_csv": "/home/Mateo_Bitar/ns3-external-validation/external_analysis/six_metrics/six_metrics_180_runs.csv",
+  "per_run_csv_sha256": "d074f1918a122ac6a617eb86985ae5b2f0b8f393cfe45e3736e46dc7f9a267f7",
+  "summary_csv": "/home/Mateo_Bitar/ns3-external-validation/external_analysis/six_metrics/six_metric_controller_summary.csv",
+  "paired_comparisons_csv": "/home/Mateo_Bitar/ns3-external-validation/external_analysis/six_metric_comparisons/all_paired_metric_comparisons.csv",
+  "updated_forced_mark_comparisons": 55,
+  "figure_directory": "/home/Mateo_Bitar/ns3-external-validation/research_figures/external_comprehensive",
+  "backup_directory": "/home/Mateo_Bitar/ns3-external-validation/.maintenance_backups/figure_merge_20261105_184619",
+  "original_simulation_traces_modified": false,
+  "note": "The original six-metric CSV contained correct total ECN marks but incorrect forced/unforced classification. All 180 traces were reconciled."
+}

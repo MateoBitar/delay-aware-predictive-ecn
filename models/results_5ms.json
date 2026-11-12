@@ -1,0 +1,82 @@
+{
+  "horizon_ms": 5,
+  "cutoff": 0.9,
+  "train_samples": 75791,
+  "train_positives": 1078,
+  "validation_samples": 25263,
+  "validation_positives": 355,
+  "test_samples": 25273,
+  "test_positives": 364,
+  "validation": {
+    "TP": 171,
+    "FP": 307,
+    "FN": 184,
+    "TN": 24601,
+    "precision": 0.3577405857740586,
+    "recall": 0.48169014084507045,
+    "f1": 0.4105642256902761,
+    "false_positive_rate": 0.012325357314918902
+  },
+  "test": {
+    "TP": 177,
+    "FP": 287,
+    "FN": 187,
+    "TN": 24622,
+    "precision": 0.38146551724137934,
+    "recall": 0.48626373626373626,
+    "f1": 0.427536231884058,
+    "false_positive_rate": 0.011521939861094383
+  },
+  "events": {
+    "episodes": 67,
+    "detected": 64,
+    "event_recall": 0.9552238805970149,
+    "mean_lead_ms": 2.2187500000000036,
+    "median_lead_ms": 2.0000000000000018,
+    "per_run": [
+      {
+        "seed": 224,
+        "episodes": 10,
+        "detected": 10,
+        "event_recall": 1.0,
+        "mean_lead_ms": 2.300000000000069
+      },
+      {
+        "seed": 225,
+        "episodes": 11,
+        "detected": 11,
+        "event_recall": 1.0,
+        "mean_lead_ms": 2.3636363636363846
+      },
+      {
+        "seed": 226,
+        "episodes": 12,
+        "detected": 12,
+        "event_recall": 1.0,
+        "mean_lead_ms": 2.249999999999956
+      },
+      {
+        "seed": 227,
+        "episodes": 11,
+        "detected": 11,
+        "event_recall": 1.0,
+        "mean_lead_ms": 2.0909090909090624
+      },
+      {
+        "seed": 228,
+        "episodes": 12,
+        "detected": 10,
+        "event_recall": 0.8333333333333334,
+        "mean_lead_ms": 2.0999999999999908
+      },
+      {
+        "seed": 229,
+        "episodes": 11,
+        "detected": 10,
+        "event_recall": 0.9090909090909091,
+        "mean_lead_ms": 2.200000000000024
+      }
+    ]
+  },
+  "model_path": "research_horizon_study/horizon_models/predictor_5ms.model"
+}

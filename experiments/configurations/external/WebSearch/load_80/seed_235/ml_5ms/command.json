@@ -1,0 +1,19 @@
+[
+  "/home/Mateo_Bitar/ns3-external-validation/ns-3.47/build/examples/tcp/ns3.47-bursty-dctcp-baseline-default",
+  "--externalManifestPath=/home/Mateo_Bitar/ns3-external-validation/external_evaluation_180/WebSearch/load_80/seed_235/ml_5ms/input_manifest.csv",
+  "--workloadMode=intermittent",
+  "--burstSchedule=original",
+  "--workloadVariation=none",
+  "--delAckTimeoutMs=20",
+  "--RngSeed=1",
+  "--RngRun=235",
+  "--controllerMode=ml-prediction-release",
+  "--mlModelPath=/home/Mateo_Bitar/ns3-external-validation/ns-3.47/research_horizon_study/horizon_models/predictor_5ms.model",
+  "--predictorHorizonMs=5",
+  "--minTh=20",
+  "--maxTh=60",
+  "--earlyMinTh=10",
+  "--earlyMaxTh=30",
+  "--minActiveMs=10",
+  "--negativeReleaseSamples=5"
+]

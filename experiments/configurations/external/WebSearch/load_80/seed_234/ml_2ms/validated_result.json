@@ -1,0 +1,17 @@
+{
+  "controller": "ml_2ms",
+  "completed_flows": 240,
+  "short_flows": 138,
+  "large_flows": 102,
+  "mean_short_fct_ms": 71.11062173913044,
+  "p95_short_fct_ms": 223.85784705000006,
+  "p99_short_fct_ms": 377.64715605999993,
+  "mean_large_fct_ms": 1342.7020971960785,
+  "ml_inference_records": 115983,
+  "early_activations": 146,
+  "early_releases": 146,
+  "manifest_sha256": "770d34b7597ccd14a8b0162c461d282f29cd0bf7304e1b3bf266c1ca9c1687c0",
+  "dataset": "WebSearch",
+  "load_percent": 80,
+  "seed": 234
+}
