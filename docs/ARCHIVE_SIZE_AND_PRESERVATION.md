@@ -84,13 +84,20 @@ The measured reduction is **677,563,043 bytes**, or **55.6% smaller**.
 The 7z uses one solid LZMA2 block, explaining why similar traces can compress
 better than independent ZIP entries.
 
-**Status:** This is a preliminary lossless compression result, not yet a
-published equivalent artifact. Counts, expanded-byte totals, and `7z t`
-are insufficient on their own to prove identical names and content for each
-file. An independent fresh extraction and SHA-256 comparison against every
-member of the original ZIP is still required before publishing. The ZIP-based
-reproducer does not accept a 7z file directly; continue using v1.0.0 ZIP for
-the 360-run verification unless explicitly restoring the identical ZIP.
+**Byte-level equivalence verified:** After `7z t` passed, the 7z was
+extracted to a separate fresh directory and compared against the original
+v1.0.0 ZIP, checking the complete set of **11,011 file paths**, each file's
+uncompressed size, and independent SHA-256 digests of the contents. All
+11,011 file comparisons **PASS**. The verified 7z is a lossless alternate
+representation of the original research files; this does **not** imply that
+its different archive bytes have the same hash as the ZIP. The ZIP-based
+reproducer still requires the original ZIP and does not accept a 7z directly.
+
+**Publication status:** The alternate 7z was verified locally but has not yet
+been confirmed uploaded to GitHub Releases. Publish it only as an **additional
+asset**, preserving the original v1.0.0 ZIP and pinned ZIP SHA-256; record a
+separate SHA-256 for the 7z. Do not claim a new full ns-3 run was performed
+using the 7z until separately tested.
 
 ## Lossless size-reduction options
 
