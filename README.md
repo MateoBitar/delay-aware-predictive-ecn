@@ -33,7 +33,7 @@ The main outcomes are mean, P95, and P99 short-flow completion time (FCT), suppl
 
 ## Get the complete artifact
 
-The complete scientific package is published as an **immutable-in-practice versioned release asset**, not committed into Git history:
+The complete verified scientific package is published as a **versioned GitHub Release asset**, not committed into Git history. GitHub currently permits changes to this release, so the SHA-256 below is the integrity reference; do not replace the asset:
 
 **[Download release v1.0.0](https://github.com/MateoBitar/delay-aware-predictive-ecn/releases/tag/v1.0.0)** — `Delay_Aware_Predictive_ECN_RESEARCHER_READY.zip` (1,218,601,406 bytes).
 
@@ -102,17 +102,31 @@ These results substantiate local reproducibility **under the tested environment*
 
 ```text
 README.md                          Project landing page and quick start
+CITATION.cff                       Citation metadata for the v1.0.0 artifact
 reproduce_full_research_FIXED.py   Full 360-experiment verification orchestrator
-FINAL_REPRODUCTION_REPORT.json     Machine-readable accepted verification evidence
-CITATION.cff                       Citation metadata (research artifact, unpublished)
+FINAL_REPRODUCTION_REPORT.json     Recorded independent-workspace verification
+src/                               Selected research-specific ns-3 source changes
+models/                            Frozen predictors and horizon summaries
+experiments/                       Original/external drivers and 360 run records
+analysis/                          Analysis scripts, accepted tables, verifiers
 docs/
-  ARTIFACT_GUIDE.md               Components, experiment matrix, interpretation
-  REPRODUCIBILITY.md              Setup, commands, checks, limitations
-  ARCHIVE_INVENTORY.md            ZIP member inventory without repackaging
-.gitignore                         Excludes large/archive-generated files
+  ARTIFACT_GUIDE.md               Experiment design, metrics, interpretation
+  REPRODUCIBILITY.md              System requirements and exact replay procedure
+  BROWSABLE_FILES.md              Provenance and limitations of Git-tracked subset
+  ARCHIVE_INVENTORY.md            Integrity and 11,010-file package inventory
+  ARCHIVE_SIZE_AND_PRESERVATION.md ZIP size, lossless options, audit procedure
+.gitattributes                     Preserve archived CSV line endings
+.gitignore                         Avoid large generated outputs in Git history
 ```
 
-The full simulator and experimental results are provided by the **release asset**, not as ordinary Git-tracked files. No accepted experimental data were removed or modified in this GitHub documentation update.
+The **browsable Git tree is a selected research-specific subset**, not a
+standalone build of ns-3.47. Its original and external experiment scripts
+expect the directory layout of the complete release package. For exact
+reproduction use the versioned ZIP and the root verification orchestrator.
+
+See [archive size and preservation](docs/ARCHIVE_SIZE_AND_PRESERVATION.md)
+before attempting compression or publication of an alternate archive.
+The release ZIP is the authoritative source for the 360-run verified dataset.
 
 ## Citation and reuse
 
