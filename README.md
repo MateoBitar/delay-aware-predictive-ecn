@@ -160,6 +160,7 @@ docs/
   ARCHIVE_INVENTORY.md            Integrity and 11,010-file package inventory
   ARCHIVE_SIZE_AND_PRESERVATION.md ZIP size, lossless options, audit procedure
   RUN_FROM_SOURCE.md              Clean ns-3.47 code-first setup and smoke run
+  LICENSING_AND_PROVENANCE.md    Third-party and research-specific licensing scope
 run_from_source.py                 Builds isolated original/external source workspaces
 tests/                             Offline research SHA-256 and command checks
 .github/workflows/                 Automated source-contract checks
@@ -180,4 +181,4 @@ The release ZIP is the authoritative source for the 360-run verified dataset.
 
 Please cite the project as an **unpublished research artifact** until a paper or DOI becomes available. Citation metadata are provided in [CITATION.cff](CITATION.cff); an IEEE journal/conference citation will be added only after publication. See [reproducibility limitations](docs/REPRODUCIBILITY.md#limitations-and-scope).
 
-**Licensing note:** The package includes ns-3 and potentially other third-party components with their own licensing terms. No blanket license is asserted for those third-party works. Redistribution and licensing of authors' original contributions should be confirmed before choosing a repository-wide `LICENSE` file; absence of a new `LICENSE` does not grant additional reuse rights.
+**Licensing note:** The simulator contains upstream ns-3.47 code, including GPL-2.0-only components and other file-specific notices. We retain those notices and do not impose a new blanket license over them. Rights holders must confirm licensing of research-original material separately. Read [licensing and third-party provenance](docs/LICENSING_AND_PROVENANCE.md) for the specific source-file boundaries and outstanding decisions. Absence of a project-wide `LICENSE` does not remove third-party license obligations or grant unrestricted reuse rights.
