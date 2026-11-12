@@ -13,6 +13,40 @@ The complete, authoritative v1.0.0 asset is
 
 **Important:** The current archive is independently reproduced and its exact SHA-256 is referenced in the published verification report. Do not change, recompress, rename, or replace that original release asset. GitHub reports the release as editable; the published SHA-256, not GitHub immutability, is the integrity check.
 
+## Measured compressed-byte breakdown (2026-11-12)
+
+The read-only `audit_release_archive.py` check succeeded against the exact
+published ZIP (SHA-256 verified). This section records measured ZIP **member
+payload** sizes; ZIP headers and central-directory overhead are additional.
+
+| Archive component | File members | Expanded MiB | Compressed ZIP data MiB |
+| --- | ---: | ---: | ---: |
+| `external_validation/` | 4,253 | 7,112.11 | **1,067.45** |
+| `simulator/` | 6,539 | 304.48 | 89.63 |
+| `reproduction/` | 216 | 9.81 | 1.81 |
+| Root manifest and documents | 3 | ~2.39 | ~0.44 |
+| **Total** | **11,011** | **7,428.79** | **1,159.33** |
+
+The **single largest subtree**, `external_validation/external_evaluation_180/`,
+contains 4,143 members, **7,101.57 MiB expanded** and **1,059.19 MiB of
+compressed member data**. The `.dat` files across the archive contain 4,617
+members and account for **1,085.59 MiB of compressed member data** (about
+94% of all member data). The largest individual entries are
+`bursty-short-flow-state.dat` traces at roughly **3.7–4.0 MiB
+compressed each** (roughly 28–30 MiB expanded).
+
+All 11,011 ZIP file members use DEFLATE (ZIP method 8); zero are encrypted.
+The 11,011 count includes the single `MANIFEST_SHA256.json`, while the
+previously published **11,010 payload files** count excludes this manifest.
+Total archive bytes are **1,218,601,406**, versus **1,215,641,940**
+compressed member bytes; the difference includes ZIP structural overhead.
+
+The metadata check identified **362 same-length/CRC-32 candidate groups**.
+These do *not* prove byte-level duplicates: CRC-32 can collide and repeated
+files may be scientifically required in multiple experiment directories.
+Do not delete or hard-link files on this basis. An independent solid-compression
+benchmark is the preferred first experiment, not file removal.
+
 ## Diagnose compressed size accurately
 
 A directory's uncompressed filesystem size cannot answer how much it contributes inside a ZIP: already-compressed images, PCAPs, numeric traces, and text can compress very differently. Inspect the ZIP central directory to attribute **compressed and expanded bytes by directory, file extension, and member**.
