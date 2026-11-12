@@ -61,6 +61,37 @@ python3 audit_release_archive.py /path/to/Delay_Aware_Predictive_ECN_RESEARCHER_
 
 The script requires Python 3 and standard-library modules only. It will **stop** on an unexpected archive hash and will not extract, delete, or edit any file. Its output will identify the actual compressed-byte hotspots. It lists same-length/CRC-32 candidates **for investigation only**; a matching CRC is *not* proof of identical content.
 
+## Measured 7z/LZMA2 benchmark (2026-11-12)
+
+A separate archive was created from the previously verified extracted package
+using Ubuntu 7-Zip 26.00, LZMA2, solid mode, compression level 7 and two
+threads:
+
+```bash
+7z a -t7z -m0=lzma2 -mx=7 -ms=on -mmt=2 \
+  ~/Delay_Aware_Predictive_ECN_LOSSLESS_TEST.7z .
+7z t ~/Delay_Aware_Predictive_ECN_LOSSLESS_TEST.7z
+```
+
+| Measurement | Original ZIP | Experimental 7z |
+| --- | ---: | ---: |
+| Archive bytes | 1,218,601,406 | **541,038,363** |
+| File members | 11,011 | 11,011 |
+| Uncompressed member bytes | 7,789,654,244 | 7,789,654,244 |
+| Integrity check | Original ZIP SHA-256 confirmed | `7z t`: Everything is Ok |
+
+The measured reduction is **677,563,043 bytes**, or **55.6% smaller**.
+The 7z uses one solid LZMA2 block, explaining why similar traces can compress
+better than independent ZIP entries.
+
+**Status:** This is a preliminary lossless compression result, not yet a
+published equivalent artifact. Counts, expanded-byte totals, and `7z t`
+are insufficient on their own to prove identical names and content for each
+file. An independent fresh extraction and SHA-256 comparison against every
+member of the original ZIP is still required before publishing. The ZIP-based
+reproducer does not accept a 7z file directly; continue using v1.0.0 ZIP for
+the 360-run verification unless explicitly restoring the identical ZIP.
+
 ## Lossless size-reduction options
 
 1. **Keep v1.0.0 as the reference** and test a *second archive* with identical member paths and member bytes. A higher-compression ZIP (DEFLATE level 9) may save space depending on how the current file was built; results must be measured.
