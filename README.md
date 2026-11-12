@@ -53,7 +53,7 @@ b26bfb7bcb26702ef88a6d29e3515e48d188988e31db7ad8edd243712304194c
 fbc1080954c951b14047140585912b3fc4b8369620d2ed8be0b7cb30759afcc4
 ```
 
-A fresh extraction of this 7z was compared with the original ZIP: **all 11,011 file paths, uncompressed sizes and SHA-256 file digests matched exactly**, including `MANIFEST_SHA256.json`. No study outputs were discarded. Requires a 7-Zip-compatible extractor (e.g., `7z x archive.7z`). The root reproduction orchestrator takes the original **ZIP**, not the 7z; download the ZIP for the documented one-command 360-run replay. If using the smaller download, extract it for inspection, or reconstruct and independently authenticate the expected ZIP before using the existing orchestrator. The 7z file-equivalence check is not a separate 360-run reproduction.
+A fresh extraction of this 7z was compared with the original ZIP: **all 11,011 file paths, uncompressed sizes and SHA-256 file digests matched exactly**, including `MANIFEST_SHA256.json`. No study outputs were discarded. Requires a 7-Zip-compatible extractor (e.g., `7z x archive.7z`). The root reproduction orchestrator takes the original **ZIP**, not the 7z; download the ZIP for the documented one-command 360-run replay. If using the smaller download, extract it for inspection; the ZIP-based full replay still requires the original published ZIP. The 7z file-equivalence check is not a separate 360-run reproduction.
 
 The alternate asset retains its originally uploaded `LOSSLESS_TEST` filename; despite that provisional name, its contents passed the documented full-file equivalence check. Details: [archive size and preservation](docs/ARCHIVE_SIZE_AND_PRESERVATION.md).
 
