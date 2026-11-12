@@ -1,0 +1,25 @@
+{
+  "archive_name": "Delay_Aware_Predictive_ECN_RESEARCHER_READY.zip",
+  "archive_sha256": "b26bfb7bcb26702ef88a6d29e3515e48d188988e31db7ad8edd243712304194c",
+  "archived_trace_matches": 5148,
+  "claim": "360 fresh/existing-verified isolated run reproductions; all archived traces and run metrics matched; full external analysis regenerated",
+  "elapsed_seconds": 1451.57,
+  "environment": {
+    "machine": "x86_64",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+    "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]"
+  },
+  "experiments_expected": 360,
+  "experiments_verified": 360,
+  "external_analysis_csv_hashes": {
+    "all_paired_metric_comparisons.csv": "08df8efe41fb937c2928d96b753ab0c9b4bf9cd3c488e90ec24314066d14f913",
+    "controller_summary_all_metrics.csv": "4e757bd0cbedfe4615047a409a49aa2c2b9445048edadb5e553189e2dca9b98c",
+    "six_metric_controller_summary.csv": "9060224d1a6c87d1afb28691a726c25370aa15f835cb7055beb1bb8fbd6cf8f6",
+    "six_metrics_180_runs.csv": "d074f1918a122ac6a617eb86985ae5b2f0b8f393cfe45e3736e46dc7f9a267f7"
+  },
+  "external_runs_verified": 180,
+  "original_runs_verified": 180,
+  "run_metric_fields_checked": 4320,
+  "scientific_scope_note": "Frozen models reused; model training is not rerun. Raw archived traces are not modified.",
+  "status": "PASS"
+}
