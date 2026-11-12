@@ -43,6 +43,20 @@ SHA-256 of the original published archive:
 b26bfb7bcb26702ef88a6d29e3515e48d188988e31db7ad8edd243712304194c
 ```
 
+### Smaller lossless download (same scientific contents)
+
+**[Download the verified 7z archive (541 MB)](https://github.com/MateoBitar/delay-aware-predictive-ecn/releases/download/v1.0.0/Delay_Aware_Predictive_ECN_LOSSLESS_TEST.7z)** — `Delay_Aware_Predictive_ECN_LOSSLESS_TEST.7z` (541,038,363 bytes; **55.6% smaller** than the original ZIP).
+
+7z SHA-256:
+
+```text
+fbc1080954c951b14047140585912b3fc4b8369620d2ed8be0b7cb30759afcc4
+```
+
+A fresh extraction of this 7z was compared with the original ZIP: **all 11,011 file paths, uncompressed sizes and SHA-256 file digests matched exactly**, including `MANIFEST_SHA256.json`. No study outputs were discarded. Requires a 7-Zip-compatible extractor (e.g., `7z x archive.7z`). The root reproduction orchestrator takes the original **ZIP**, not the 7z; download the ZIP for the documented one-command 360-run replay. If using the smaller download, extract it for inspection, or reconstruct and independently authenticate the expected ZIP before using the existing orchestrator. The 7z file-equivalence check is not a separate 360-run reproduction.
+
+The alternate asset retains its originally uploaded `LOSSLESS_TEST` filename; despite that provisional name, its contents passed the documented full-file equivalence check. Details: [archive size and preservation](docs/ARCHIVE_SIZE_AND_PRESERVATION.md).
+
 The release contains the modified ns-3.47 simulator, both experiment variants, frozen predictor models, recorded configurations and input manifests, 360 accepted runs and raw traces, analysis tools, and research documentation. See [artifact guide](docs/ARTIFACT_GUIDE.md) and [archive inventory](docs/ARCHIVE_INVENTORY.md).
 
 ## Browse the research code and accepted results
