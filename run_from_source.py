@@ -75,7 +75,8 @@ def prepare(args):
             "Workspace already exists or is source itself. Choose a new empty path.")
     require(not (ns3_source / "examples/tcp/bursty-dctcp-baseline.cc").exists(),
             "Input already contains the research example; use a CLEAN upstream ns-3.47 source tree")
-    require(args.jobs >= 1 and args.jobs <= 32, "Choose --jobs between 1 and 32")\n    require(shutil.which("cmake") and shutil.which("ninja") and shutil.which("g++"),
+    require(args.jobs >= 1 and args.jobs <= 32, "Choose --jobs between 1 and 32")
+    require(shutil.which("cmake") and shutil.which("ninja") and shutil.which("g++"),
             "CMake, Ninja and g++ are required (sudo apt install build-essential cmake ninja-build)")
     source_rel = ("src/ns3/examples/tcp/bursty-dctcp-baseline.cc" if args.variant == "original"
                   else "src/external_override/bursty-dctcp-baseline.cc")
@@ -240,7 +241,8 @@ def main():
     a.add_argument("--ns3-source", required=True, help="Path to CLEAN upstream ns-3.47")
     a.add_argument("--workspace", required=True, help="New, nonexistent output directory")
     a.add_argument("--variant", choices=("original", "external"), default="original")
-    a.add_argument("--jobs", type=int, default=2, help="Build parallel jobs (default: 2)")\n    a.add_argument("--skip-build", action="store_true", help="For manual configuration only")
+    a.add_argument("--jobs", type=int, default=2, help="Build parallel jobs (default: 2)")
+    a.add_argument("--skip-build", action="store_true", help="For manual configuration only")
     b = sub.add_parser("run", help="Run one exact recorded case with remapped paths")
     b.add_argument("--workspace", required=True)
     b.add_argument("--controller", choices=("baseline", "lower_fixed", "trend",
