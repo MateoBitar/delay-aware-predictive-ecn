@@ -93,11 +93,21 @@ representation of the original research files; this does **not** imply that
 its different archive bytes have the same hash as the ZIP. The ZIP-based
 reproducer still requires the original ZIP and does not accept a 7z directly.
 
-**Publication status:** The alternate 7z was verified locally but has not yet
-been confirmed uploaded to GitHub Releases. Publish it only as an **additional
-asset**, preserving the original v1.0.0 ZIP and pinned ZIP SHA-256; record a
-separate SHA-256 for the 7z. Do not claim a new full ns-3 run was performed
-using the 7z until separately tested.
+**Publication status:** Both archive formats are now uploaded as separate
+assets under [release v1.0.0](https://github.com/MateoBitar/delay-aware-predictive-ecn/releases/tag/v1.0.0).
+The original ZIP is unchanged. The smaller lossless archive retains its
+provisional filename `Delay_Aware_Predictive_ECN_LOSSLESS_TEST.7z`, but all
+11,011 extracted file paths, sizes, and SHA-256 file hashes matched the ZIP.
+
+- **ZIP**: `Delay_Aware_Predictive_ECN_RESEARCHER_READY.zip`, 1,218,601,406
+  bytes; SHA-256 `b26bfb7bcb26702ef88a6d29e3515e48d188988e31db7ad8edd243712304194c`.
+- **7z**: `Delay_Aware_Predictive_ECN_LOSSLESS_TEST.7z`, 541,038,363 bytes;
+  SHA-256 `fbc1080954c951b14047140585912b3fc4b8369620d2ed8be0b7cb30759afcc4`.
+
+GitHub reports both uploaded assets with matching recorded SHA-256 digests.
+The complete 360-run replay was conducted with the original ZIP, not directly
+with the 7z file. The existing reproducer accepts a ZIP path, so choose the
+original ZIP when performing the documented automatic full replay.
 
 ## Lossless size-reduction options
 
