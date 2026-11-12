@@ -4,17 +4,25 @@ This is the conventional, **code-first** entry point for the published research.
 It does **not** require the 1.22 GB reference ZIP or the 541 MB 7z archive
 to build and execute one of the **recorded original or external experiments**.
 
-**Scope and evidence (2026-11-12):** This path uses the exact verified
-research-specific C++ source and frozen predictor models already browsable in
-GitHub, and reads recorded `command.json` files. The code-first setup has
-automated offline contract checks. The authors additionally reported a
-**successful local Ubuntu/WSL2 clean-upstream source build** for the original
-variant and a seed-224 `baseline` smoke run:
-`SMOKE TEST PASS: 24 completed-flow records, 19 research output files`.
-This confirms execution from source on that host, **not** independent-host
-reproduction, exact historical trace equality, the other controllers, or the
-external variant. The previously reported **360/360** exact reproduction
-applies exclusively to the archived ZIP workflow.
+**Scope and evidence (2026-11-12):** This path uses the exact research
+C++ source, frozen predictor models and recorded `command.json` settings
+published in GitHub. The automated offline contract checks pass. On the authors'
+local Ubuntu/WSL2 host, both original and external ns-3.47 variants were built
+from clean upstream source and executed successfully:
+
+- **Original:** seed 224, `baseline`, 24 completed-flow records and 19 output
+  files. This is a successful smoke run; no separate raw-hash comparison has
+  yet been reported for this source-based case.
+- **External:** WebSearch CDF-derived workload, nominal 60% offered load,
+  seed 230, `baseline`, 240 completed-flow records and 19 output files.
+  A separate read-only comparison against the archived accepted reference
+  showed **19/19 exact raw-trace SHA-256 matches** and **12/12 accepted
+  metric-field matches**, using the archived external scientific validator.
+
+These are **author-run local tests**, not independent-host reproduction or
+verification of every controller and condition. The previous **360/360**
+exact-reproduction result refers to the original ZIP-based workflow, not
+360 code-first executions.
 
 ## 1. Install dependencies (Ubuntu / WSL2)
 
@@ -151,6 +159,29 @@ manifest into the fresh run folder, and remaps its historical absolute
 `--externalManifestPath` to the local copy. It checks 240 FCT records.
 Synthetic WebSearch and FB_Hadoop workload inputs derive from published
 flow-size CDFs; these are **not** original production packet traces.
+
+## Exact comparison of the external baseline against archived evidence
+
+The source-based external WebSearch seed-230 baseline was independently
+executed from the rebuilt variant and then compared to the preserved reference
+under `external_validation/external_evaluation_180/WebSearch/load_60/seed_230/baseline/`.
+The separate validation compared the complete `bursty-*` filename inventory,
+each trace's byte count and SHA-256 digest, and recomputed all 12 accepted
+metrics using the original `run_external_180.py` validation functions.
+The reported results were:
+
+```text
+PASS: 19/19 raw traces match
+PASS: ALL ARCHIVED TRACES MATCH EXACTLY
+PASS: ALL 12 SCIENTIFIC METRIC FIELDS MATCH
+PASS: SOURCE-BASED EXTERNAL BASELINE REPRODUCED
+```
+
+The archive was **not required to run** the rebuilt simulation; it was used
+only as the reference for this subsequent validation. This establishes exact
+**local one-case** agreement for the external baseline, rather than
+independent third-party replication or complete source-first study reproduction.
+No accepted archive files or scientific measurements were altered.
 
 ## What this does not claim
 
