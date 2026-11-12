@@ -95,6 +95,12 @@ variants. The original seed-224 baseline completed **24 flow records and 19
 output files**. The external WebSearch 60%/seed-230 baseline completed
 **240 flow records and 19 output files**, followed by **19/19 exact archived
 trace SHA-256 matches and 12/12 accepted scientific metric matches**.
+The same external WebSearch 60%/seed-230 case with the actual
+**`ml_5ms` predictive controller** also executed from clean source and
+passed **19/19 exact raw-trace SHA-256 comparisons**, **12/12 accepted
+scientific metric checks**, and authentication of the frozen 5 ms model
+(SHA-256 `30372baf1843d5b9aec84bf95644a731637f5d3bcb5e8bcbd4fcd9e7555a7146`).
+
 These are author-run local results for selected cases, **not**
 independent-host verification or complete source-first reproduction of all
 360 cases. The separate full archival ZIP pathway remains the documented
